@@ -1,0 +1,11 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:285005585511:task-definition/ECS-Lab-02-MyTaskDef-C3U90WSLAYFA:2"
+        LoadBalancerInfo:
+          ContainerName: "VenomSnake"
+          ContainerPort: 80
+Hooks:
+  - BeforeInstall: "test-codedeploy-ecs"
