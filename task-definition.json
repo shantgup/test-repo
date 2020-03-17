@@ -1,0 +1,117 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": null,
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "ECS-Lab-02-ContainerLogs-1GBF0AI1YDN2X",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs-lab"
+        }
+      },
+      "entryPoint": [],
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "command": [],
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [],
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": [],
+      "mountPoints": [
+        {
+          "readOnly": null,
+          "containerPath": "/var/www/html/data/",
+          "sourceVolume": "DataVolume"
+        }
+      ],
+      "workingDirectory": null,
+      "secrets": null,
+      "dockerSecurityOptions": [],
+      "memory": 50,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "285005585511.dkr.ecr.us-east-1.amazonaws.com/ecs-l-myecr-1jja39m1h2u6m",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": [],
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": [],
+      "privileged": null,
+      "name": "VenomSnake"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": null,
+  "taskRoleArn": null,
+  "compatibilities": [
+    "EC2"
+  ],
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:285005585511:task-definition/ECS-Lab-02-MyTaskDef-C3U90WSLAYFA:2",
+  "family": "ECS-Lab-02-MyTaskDef-C3U90WSLAYFA",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+    }
+  ],
+  "pidMode": null,
+  "requiresCompatibilities": [],
+  "networkMode": null,
+  "cpu": null,
+  "revision": 2,
+  "status": "ACTIVE",
+  "inferenceAccelerators": null,
+  "proxyConfiguration": null,
+  "volumes": [
+    {
+      "efsVolumeConfiguration": null,
+      "name": "DataVolume",
+      "host": {
+        "sourcePath": "/var/ec2-user/data"
+      },
+      "dockerVolumeConfiguration": null
+    }
+  ]
+}
